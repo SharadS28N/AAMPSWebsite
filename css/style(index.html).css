@@ -1,3 +1,7 @@
+body{
+    background-color: #0e0909;
+    color: #fff;
+}
 section{
     padding: 100px 200px ;
 }
@@ -10,16 +14,31 @@ section{
     flex-direction: column;
 }
 
-loginbtn{
+.home .content{
+    z-index: 888;
     color: #fff;
-    background-color: #007bff;
-    border-radius: 35px;
-    border: 2px solid rgba(0, 70, 147, 0.75);
+    width: 70%;
+    margin-top: 50px;
 }
 
-signupbtn{
-    color: #fff;
-    background-color: #007bff;
-    border-radius: 35px;
-    border: 2px solid rgba(0, 70, 147, 0.75);
+.home.content h1{
+    font-size: 4em;
+    font-weight: 900;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-bottom: 400px;
 }
+
+.home.content h1 span{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.home.content p{
+    margin-bottom: 65px;
+}
+
+
+
+
+

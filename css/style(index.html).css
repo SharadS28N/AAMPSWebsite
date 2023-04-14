@@ -1,4 +1,7 @@
-
+body{
+    background-color: #0e0909;
+    color: #fff;
+}
 section{
     padding: 100px 200px ;
 }
@@ -45,9 +48,21 @@ section{
     margin-top: -100px;
 }
 
-#particles-js{
-    height: 100%;
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background:#0e0909
-}
+    height: 100%;
+    z-index: -1;
+  }
+  
+  #text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
 

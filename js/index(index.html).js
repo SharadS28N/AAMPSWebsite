@@ -1,26 +1,35 @@
-const slideshow = document.querySelector('.slideshow');
-const slides = slideshow.querySelectorAll('.slideshow-slide');
-const prevButton = slideshow.querySelector('.prev-slide');
-const nextButton = slideshow.querySelector('.next-slide');
-let currentSlide = 0;
+const slides = document.querySelector(".slides");
+const slideImages = document.querySelectorAll(".slides img");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+let counter = 1;
+const size = slideImages[0].clientWidth;
 
-// Set the first slide as active
-slides[currentSlide].classList.add('active');
+slides.style.transform = `translateX(${-size * counter}px)`;
 
-// Add event listeners to the previous and next buttons
-prevButton.addEventListener('click', showPrevSlide);
-nextButton.addEventListener('click', showNextSlide);
+nextBtn.addEventListener("click", () => {
+  if (counter >= slideImages.length - 1) return;
+  slides.style.transition = "transform 0.5s ease-in-out";
+  counter++;
+  slides.style.transform = `translateX(${-size * counter}px)`;
+});
 
-// Function to show the previous slide
-function showPrevSlide() {
-  slides[currentSlide].classList.remove('active');
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  slides[currentSlide].classList.add('active');
-}
+prevBtn.addEventListener("click", () => {
+  if (counter <= 0) return;
+  slides.style.transition = "transform 0.5s ease-in-out";
+  counter--;
+  slides.style.transform = `translateX(${-size * counter}px)`;
+});
 
-// Function to show the next slide
-function showNextSlide() {
-  slides[currentSlide].classList.remove('active');
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add('active');
-}
+slides.addEventListener("transitionend", () => {
+  if (slideImages[counter].id === "lastClone") {
+    slides.style.transition = "none";
+    counter = slideImages.length - 2;
+    slides.style.transform = `translateX(${-size * counter}px)`;
+  }
+  if (slideImages[counter].id === "firstClone") {
+    slides.style.transition = "none";
+    counter = slideImages.length - counter;
+    slides.style.transform = `translateX(${-size * counter}px)`;
+  }
+});

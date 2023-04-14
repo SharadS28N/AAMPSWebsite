@@ -1,0 +1,25 @@
+section{
+    padding: 100px 200px ;
+}
+.home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+loginbtn{
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 35px;
+    border: 2px solid rgba(0, 70, 147, 0.75);
+}
+
+signupbtn{
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 35px;
+    border: 2px solid rgba(0, 70, 147, 0.75);
+}

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Privacy Policy</title>
     <link href="https://fonts.googleapis.com/css?family=Chivo+Mono" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
             background-color: #0e0909;
@@ -64,9 +66,96 @@
             z-index: 1;
           }
           
+          .nav-link:hover{
+    text-decoration: underline white;
+    color: white;
+    text-underline-offset: 3px;
+}
+
+.loader-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	z-index: 9999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.loader {
+	border: 5px solid rgba(255, 87, 34, 0.8);
+	border-top-color: transparent;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	animation: loader-spin 1s linear infinite;
+}
+
+@keyframes loader-spin {
+	to {transform: rotate(360deg);}
+}
+
+.loader:before {
+	content: "";
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	right: -10px;
+	bottom: -10px;
+	border: 5px solid rgba(255, 87, 34, 0.3);
+	border-top-color: transparent;
+	border-radius: 50%;
+	animation: loader-spin 2s linear infinite;
+}
+
+.loader:after {
+	content: "";
+	position: absolute;
+	top: -15px;
+	left: -15px;
+	right: -15px;
+	bottom: -15px;
+	border: 5px solid rgba(255, 87, 34, 0.5);
+	border-top-color: transparent;
+	border-radius: 50%;
+	animation: loader-spin 3s linear infinite;
+}
+
     </style>
   </head>
+  <section>
+
   <body>
+
+    <div class="loader-container" id="loader-container">
+      <div class="loader"></div>
+  </div>
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+    <div class="container">
+  <a class="navbar-brand" href="#">
+    <img src="logo.png" alt="Logo" width="50" height="50">
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item text-light">
+        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+      </li>
+      <li class="nav-item text-light">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
+</section>
+<br><br><br><br>
     <div id="particles-js"></div>
     <div class="container" >
       <h1 style="color: orangered;">Privacy Policy</h1>
@@ -89,7 +178,7 @@
         <li>We are committed to ensuring that your information is secure. In order to prevent unauthorised access or disclosure, we have put in place suitable physical, electronic and managerial procedures to safeguard and secure the information we collect online.</li>
         <li>Our website may contain links to other websites of interest. However, once you have used these links to leave our site, you should note that we do not have any control over that other website. Therefore, we cannot be responsible for the protection and privacy of any information which you provide whilst visiting such sites and such sites are not governed by this privacy statement. You should exercise caution and look at the privacy statement applicable to the website in question.</li>
       </ul>
-      <p>If you believe that any information we are holding on you is incorrect or incomplete,please email us as soon as possible at <a href="mailto:privacy@website.com">privacy@website.com</a>. We will promptly correct any information found to be incorrect.</p>
+      <p>If you believe that any information we are holding on you is incorrect or incomplete,please email us as soon as possible at <a href="mailto:privacy@website.com">sharad.bhandari222@gmail.com</a>. We will promptly correct any information found to be incorrect.</p>
     </div>
 
     <script src="/js/particles.js"></script>
@@ -99,6 +188,34 @@
           console.log('particles.js loaded');
         });
         </script>
+
+        <script>
+          //for preloader
+  
+          // Show the loader
+  function showLoader() {
+      document.getElementById("loader-container").style.display = "flex";
+    }
+    
+    // Hide the loader and redirect the page
+    function hideLoaderAndRedirect() {
+      document.getElementById("loader-container").style.display = "none";
+    }
+    
+    // Wait for the page to load
+    window.addEventListener("load", function() {
+      // Show the loader
+      showLoader();
+    
+      // Set a delay to simulate the preloader animation
+      setTimeout(function() {
+        // Hide the loader and redirect the page
+        hideLoaderAndRedirect();
+      }, 3000); // Replace 3000 with the duration of your preloader animation in milliseconds
+    });
+    
+    
+      </script>
         
       </body>
     </html>

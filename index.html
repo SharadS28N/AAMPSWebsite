@@ -22,6 +22,11 @@
 
 <body style="font-family: 'Chivo Mono', monospace; background-color: #0e0909;
 color: #fff;" >
+
+<div class="loader-container" id="loader-container">
+  <div class="loader"></div>
+</div>
+
 <div id="particles-js"></div>
   <!--Navbar-->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
@@ -73,6 +78,33 @@ color: #fff;" >
 
 
  <script src="js/index(particle).js"></script>
+ <script>
+  //for preloader
+
+  // Show the loader
+function showLoader() {
+document.getElementById("loader-container").style.display = "flex";
+}
+
+// Hide the loader and redirect the page
+function hideLoaderAndRedirect() {
+document.getElementById("loader-container").style.display = "none";
+}
+
+// Wait for the page to load
+window.addEventListener("load", function() {
+// Show the loader
+showLoader();
+
+// Set a delay to simulate the preloader animation
+setTimeout(function() {
+// Hide the loader and redirect the page
+hideLoaderAndRedirect();
+}, 3000); // Replace 3000 with the duration of your preloader animation in milliseconds
+});
+
+
+</script>
 
 </body>
 </html>

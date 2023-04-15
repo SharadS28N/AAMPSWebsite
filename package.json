@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/SharadS28N/AAMPSWebsite#readme",
   "dependencies": {
-    "passport-facebook": "^3.0.0"
+    "express": "^4.18.2",
+    "passport-facebook": "^3.0.0",
+    "react-router-dom": "^6.10.0"
   }
 }

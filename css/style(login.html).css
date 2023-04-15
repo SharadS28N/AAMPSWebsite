@@ -66,6 +66,7 @@ hr {
 .frame{
     align-items: center;
     padding: 50px;
+    padding-top: 100px;
 }
 
 .container {
@@ -85,4 +86,3 @@ hr {
     position: relative;
     z-index: 1;
   }
-  

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Modern Login Page</title>
+  <title>Login Page</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-jXZ5PY5P5oJpi5hrxPqx+eJwLl1WHLOdSBUJnG+9n1KKhJNYhF4xJ4WJmG6Ude+l6E0ghg+q3zO5HJug5WG5/g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/style(login.html).css">
@@ -14,31 +14,36 @@
 </head>
 <body>
     <div id="particles-js"></div>
-  <div class="container frame">
-    <div class="row justify-content-center mt-5">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h3 class="text-center mb-4 " style="color:white;">Login</h3>
-            <hr>
-            <p class="text-center mb-0">Login With:</p>
-            <div class="social-login mt-3">
-                <a href="#" class="btn btn-cutomfb btn-facebook"><i class="fab fa-facebook"></i> Login with Facebook</a>
+    <div class="container frame">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-4 " style="color:white;">Login</h3>
+                        <hr>
+                        <p class="text-center mb-0">Login With:</p>
+                        <div class="social-login mt-3">
+                            <a class="btn btn-cutomfb btn-facebook" onclick="facebookLogin()"><i class="fab fa-facebook"></i> Login with Facebook</a>
+                        </div>
+                        <div class="social-login mt-3">
+                            <a class="btn btn-customg btn-google" onclick="googleLogin()"><i class="fab fa-google"></i> Login with Google</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="social-login mt-3">
-                <a href="#" class="btn btn-customg btn-google"><i class="fab fa-google"></i> Login with Google<span><br></span></a>
-            </div >
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <script src="/js/index(login.html).js"></script>
-  <script src="/js/particles.js"></script>
-  <script src="/js/index(particle).js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <!-- include the Facebook SDK -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+    <script src="/js/index(login.html).js"></script>
+    <script src="/js/particles.js"></script>
+    <script src="/js/index(particle).js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

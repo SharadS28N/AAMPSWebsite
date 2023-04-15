@@ -1,29 +1,37 @@
-window.fbAsyncInit = function() {
+  window.fbAsyncInit = function() {
     FB.init({
-        appId      : 'your-app-id',
-        cookie     : true,
-        xfbml      : true,
-        version    : 'v12.0'
+      appId      : '946116086813914',
+      cookie     : true,
+      xfbml      : true,
+      version    : '16.0'
     });
       
     FB.AppEvents.logPageView();   
-};
+      
+  };
 
-function facebookLogin() {
-    FB.login(function(response) {
-        if (response.authResponse) {
-            console.log('User is logged in and authenticated.');
-            console.log(response.authResponse);
-        } else {
-            console.log('User cancelled login or did not fully authorize.');
-        }
-    }, {scope: 'email'});
-    }
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+   
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
 
 
-    function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId());
-        console.log('Name: ' + profile.getName());
-        console.log('Email: ' + profile.getEmail());
-    }
+<fb:login-button 
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
+
+
+function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }

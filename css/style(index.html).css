@@ -75,3 +75,28 @@ section{
     background-color: orangered;
     color: white;
 }
+
+.btn-login{
+    border: 1px solid orangered;
+    border-radius: 30px;
+    color: white;
+    background-color: orangered;
+}
+
+.btn-signup{
+    border:5px solid transparent;
+    border-radius: 30px;
+    color:white
+}
+
+.btn-signup:hover{
+    color: white;
+    text-decoration: underline white;
+    text-underline-offset: 3px;
+}
+
+.nav-link:hover{
+    text-decoration: underline white;
+    color: white;
+    text-underline-offset: 3px;
+}

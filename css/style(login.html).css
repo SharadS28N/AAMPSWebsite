@@ -1,4 +1,69 @@
-body{
-    background-color: #0e0909;
-    color: #fff;
+body {
+  background-color: #0e0909;
+  color: white;
+}
+
+.card {
+  border: none;
+  background-color: #413d3d;
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-body {
+  padding: 40px 30px;
+}
+
+.card-body h3 {
+  color: #333;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.social-login {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-login a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-login a i {
+  margin-right: 10px;
+}
+
+.btn-facebook {
+  background-color: #3b5998;
+}
+
+.btn-google {
+  background-color: #dd4b39;
+}
+
+.btn-facebook:hover {
+  background-color: #2d4373;
+}
+
+.btn-google:hover {
+  background-color: #c32f1d;
+}
+
+.frame{
+    align-items: center;
+    padding: 50px;
 }

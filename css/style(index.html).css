@@ -66,3 +66,12 @@ section{
   }
   
 
+.btn-custom{
+    border: 1px solid orangered;
+    color: orangered;
+}
+
+.btn-custom:hover{
+    background-color: orangered;
+    color: white;
+}

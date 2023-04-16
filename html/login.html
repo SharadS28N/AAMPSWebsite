@@ -9,6 +9,16 @@
 
 </head>
 <body>
+    <div class="loader-container" id="loader-container">
+        <div class="loader"></div>
+      </div>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+        <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="logo.png" alt="Logo" width="50" height="50">
+      </a> 
+      </div>
+      </nav>
 	<div id="particles-js"></div>
 	<div class="container">
 		<div class="card">
@@ -20,5 +30,32 @@
 	<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="/js/index(particle).js"></script>
     <script src="/js/particles.js"></script>
+    <script>
+        //for preloader
+      
+        // Show the loader
+      function showLoader() {
+      document.getElementById("loader-container").style.display = "flex";
+      }
+      
+      // Hide the loader and redirect the page
+      function hideLoaderAndRedirect() {
+      document.getElementById("loader-container").style.display = "none";
+      }
+      
+      // Wait for the page to load
+      window.addEventListener("load", function() {
+      // Show the loader
+      showLoader();
+      
+      // Set a delay to simulate the preloader animation
+      setTimeout(function() {
+      // Hide the loader and redirect the page
+      hideLoaderAndRedirect();
+      }, 3000); // Replace 3000 with the duration of your preloader animation in milliseconds
+      });
+      
+      
+      </script>
 </body>
 </html>

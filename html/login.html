@@ -3,69 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Login</title>
-	<link rel="stylesheet" href="/css/login.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,100&display=swap">
+    <link rel="stylesheet" href="/css/login.css">
+
 </head>
 <body>
-
-    <div id="root"></div>
-    <div class="loader-container" id="loader-container">
-        <div class="loader"></div>
-    </div>
-    </div>
 	<div id="particles-js"></div>
 	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-md-6 col-lg-4">
-				<div class="card">
-					<div class="card-body">
-						<h4 class="card-title" style="color: orangered;">Login</h4>
-						
-						<hr>
-						<div id='login 'class="text-center">
-							<p>Login with you media handels!</p>
-							<a href="#" class="btn btn-outline-primary"><i class="fab fa-facebook-f"></i> Facebook</a>
-						</div>
-                        <br>
-                        <div id = 'login' class="text-center">
-                            <a href="#" class="btn btn-outline-danger"><i class="fab fa-google"></i> Google</a>
-                        </div>
-					</div>
-				</div>
-			</div>
+		<div class="card">
+			<h2>Login</h2>
+			<a href="#" class="btn facebook"><i class="fab fa-facebook-f"></i> Login with Facebook</a>
+			<a href="#" class="btn google"><i class="fab fa-google"></i> Login with Google</a>
 		</div>
 	</div>
-    <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-	<script src="/js/login.js"></script>
-    <script src="/js/particles.js"></script>
     <script src="/js/index(particle).js"></script>
-    <script>
-        //for preloader
-
-        // Show the loader
-function showLoader() {
-    document.getElementById("loader-container").style.display = "flex";
-  }
-  
-  // Hide the loader and redirect the page
-  function hideLoaderAndRedirect() {
-    document.getElementById("loader-container").style.display = "none";
-  }
-  
-  // Wait for the page to load
-  window.addEventListener("load", function() {
-    // Show the loader
-    showLoader();
-  
-    // Set a delay to simulate the preloader animation
-    setTimeout(function() {
-      // Hide the loader and redirect the page
-      hideLoaderAndRedirect();
-    }, 3000); // Replace 3000 with the duration of your preloader animation in milliseconds
-  });
-  
-  
-    </script>
+    <script src="/js/particles.js"></script>
 </body>
 </html>

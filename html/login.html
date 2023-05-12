@@ -6,13 +6,11 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,100&display=swap">
     <link rel="stylesheet" href="/css/login.css">
-    <meta name="google-signin-client_id" content="959450861298-p3sqsbnkcmoni23jtnp6jp8mpp0ourbi.apps.googleusercontent.com">
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
 
 </head>
 <body>
-    <script src="https://apis.google.com/js/platform.js"></script>
 <div class="loader-container" id="loader-container">
         <div class="loader"></div>
       </div>
@@ -93,29 +91,5 @@
             </script>
         </div>
 
-        <script>
-            function onSignIn(googleUser) {
-                // Get the user's ID token
-                var id_token = googleUser.getAuthResponse().id_token;
-                
-                // Send the token to your server for validation
-                // ...
-            }
-
-
-            gapi.load('auth2', function() {
-                gapi.auth2.init({
-                    client_id: '959450861298-p3sqsbnkcmoni23jtnp6jp8mpp0ourbi.apps.googleusercontent.com',
-                    scope: 'email'
-                }).then(function() {
-                    // Attach the Google Sign-In button to the element with the ID 'google-signin-button'
-                    var element = document.getElementById('google-signin-button');
-                    gapi.signin2.render(element, {
-                        'onsuccess': onSignIn
-                    });
-                });
-            });
-            
-        </script>
 </body>
 </html>

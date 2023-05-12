@@ -7,9 +7,8 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,100&display=swap">
     <link rel="stylesheet" href="/css/login.css">
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-
-
-</head>
+    <script src="https://apis.google.com/js/api.js"></script>
+  </head>
 <body>
 <div class="loader-container" id="loader-container">
         <div class="loader"></div>
@@ -20,12 +19,40 @@
 		<div class="card">
 			<h2>Login</h2>
 			<a href="#" class="btn facebook"  onclick="loginWithFacebook()"><i class="fab fa-facebook-f"></i> Login with Facebook</a>
-			<a href="#" id="google-signin-button" class="btn googleg-signin2 google" data-onsuccess="onSignIn"><i class="fab fa-google"></i> Login with Google</a>
+			<a href="#" id="google-signin-button" class="btn google" data-onsuccess="onSignIn"><i class="fab fa-google"></i> Login with Google</a>
             <div class="extra">
                 <p>By logining in you state your representation in our<br><span><a href="/html/privacypolicy.html" style="color: white;">Pricavy Policy</a></span></p>
             </div>
         </div>
 		</div>
+
+    <!-- Include the Google Sign-in API library -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<script>
+    // Initialize the Google Sign-in client with your client ID
+    gapi.load('auth2', function() {
+        gapi.auth2.init({
+            client_id: '959450861298-p3sqsbnkcmoni23jtnp6jp8mpp0ourbi.apps.googleusercontent.com',
+            scope: 'profile email'
+        });
+    });
+
+    // Implement a function to handle the user authentication response
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    }
+
+    // Attach the onSignIn function to the Google Sign-in button
+    var signinButton = document.getElementById('google-signin-button');
+    signinButton.addEventListener('click', function() {
+        gapi.auth2.getAuthInstance().signIn().then(onSignIn);
+    });
+</script>
 
 	<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="/js/index(particle).js"></script>
@@ -91,5 +118,38 @@
             </script>
         </div>
 
+        <script>
+          function init() {
+            gapi.load('auth2', function() {
+              auth2 = gapi.auth2.init({
+                client_id: '959450861298-p3sqsbnkcmoni23jtnp6jp8mpp0ourbi.apps.googleusercontent.com',
+                cookiepolicy: 'single_host_origin'
+              });
+          
+              // Attach click event listener to your custom button
+              document.getElementById('google-signin-button').addEventListener('click', onSignIn);
+            });
+          }
+         </script>
+         <script>
+          function onSignIn() {
+            auth2.signIn().then(function(googleUser) {
+              var id_token = googleUser.getAuthResponse().id_token;
+          
+              // Send the ID token to your server for verification
+              // You can use an AJAX request or any other method to send the token
+          
+              // Access the user's profile information
+              var profile = googleUser.getBasicProfile();
+              console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+              console.log('Name: ' + profile.getName());
+              console.log('Image URL: ' + profile.getImageUrl());
+              console.log('Email: ' + profile.getEmail());
+            }, function(error) {
+                // Add code here to handle sign-in errors
+                console.error(error);
+                });
+                } 
+         </script>
 </body>
 </html>

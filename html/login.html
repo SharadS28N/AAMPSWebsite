@@ -6,6 +6,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,100&display=swap">
     <link rel="stylesheet" href="/css/login.css">
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
 
 </head>
 <body>
@@ -17,7 +19,7 @@
 	<div class="container">
 		<div class="card">
 			<h2>Login</h2>
-			<a href="#" class="btn facebook"><i class="fab fa-facebook-f"></i> Login with Facebook</a>
+			<a href="#" class="btn facebook"  onclick="loginWithFacebook()"><i class="fab fa-facebook-f"></i> Login with Facebook</a>
 			<a href="#" class="btn google"><i class="fab fa-google"></i> Login with Google</a>
             <div class="extra">
                 <p>By logining in you state your representation in our<br><span><a href="/html/privacypolicy.html" style="color: white;">Pricavy Policy</a></span></p>
@@ -55,6 +57,34 @@
       });
       
       
+      </script>
+      <script>
+        //data collection
+        window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '946116086813914',
+              cookie     : true,
+              xfbml      : true,
+              version    : 'v16.0'
+            });
+          };
+          
+
+          //execution 
+          function loginWithFacebook() {
+            FB.login(function(response) {
+              if (response.authResponse) {
+                console.log('Welcome!  Fetching your information.... ');
+                FB.api('/me', function(response) {
+                  console.log('Good to see you, ' + response.name + '.');
+                  // Here you can handle the logged in user data as needed.
+                });
+              } else {
+                console.log('User cancelled login or did not fully authorize.');
+              }
+            }, {scope: 'email,user_likes'});
+          }
+          
       </script>
 </body>
 </html>

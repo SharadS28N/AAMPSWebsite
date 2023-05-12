@@ -6,12 +6,14 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,100&display=swap">
     <link rel="stylesheet" href="/css/login.css">
+    <meta name="google-signin-client_id" content="959450861298-p3sqsbnkcmoni23jtnp6jp8mpp0ourbi.apps.googleusercontent.com">
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
 
 </head>
 <body>
-    <div class="loader-container" id="loader-container">
+    <script src="https://apis.google.com/js/platform.js"></script>
+<div class="loader-container" id="loader-container">
         <div class="loader"></div>
       </div>
 
@@ -20,7 +22,7 @@
 		<div class="card">
 			<h2>Login</h2>
 			<a href="#" class="btn facebook"  onclick="loginWithFacebook()"><i class="fab fa-facebook-f"></i> Login with Facebook</a>
-			<a href="#" class="btn google"><i class="fab fa-google"></i> Login with Google</a>
+			<a href="#" id="google-signin-button" class="btn googleg-signin2 google" data-onsuccess="onSignIn"><i class="fab fa-google"></i> Login with Google</a>
             <div class="extra">
                 <p>By logining in you state your representation in our<br><span><a href="/html/privacypolicy.html" style="color: white;">Pricavy Policy</a></span></p>
             </div>
@@ -31,6 +33,7 @@
     <script src="/js/index(particle).js"></script>
     <script src="/js/particles.js"></script>
     <script src="/js/login.js"></script>
+
     <script>
         //for preloader
       
@@ -58,7 +61,10 @@
       
       
       </script>
+
+      <div>
       <script>
+        //fb login
         //data collection
         window.fbAsyncInit = function() {
             FB.init({
@@ -84,7 +90,32 @@
               }
             }, {scope: 'email,user_likes'});
           }
-          
-      </script>
+            </script>
+        </div>
+
+        <script>
+            function onSignIn(googleUser) {
+                // Get the user's ID token
+                var id_token = googleUser.getAuthResponse().id_token;
+                
+                // Send the token to your server for validation
+                // ...
+            }
+
+
+            gapi.load('auth2', function() {
+                gapi.auth2.init({
+                    client_id: '959450861298-p3sqsbnkcmoni23jtnp6jp8mpp0ourbi.apps.googleusercontent.com',
+                    scope: 'email'
+                }).then(function() {
+                    // Attach the Google Sign-In button to the element with the ID 'google-signin-button'
+                    var element = document.getElementById('google-signin-button');
+                    gapi.signin2.render(element, {
+                        'onsuccess': onSignIn
+                    });
+                });
+            });
+            
+        </script>
 </body>
 </html>

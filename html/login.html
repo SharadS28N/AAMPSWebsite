@@ -52,6 +52,12 @@
     signinButton.addEventListener('click', function() {
         gapi.auth2.getAuthInstance().signIn().then(onSignIn);
     });
+    function onSignIn(googleUser) {
+      // Handle the login response here, extract user information, etc.
+      
+      // Redirect the user to the desired webpage
+      window.location.href = '/html/main.html';
+    }
 </script>
 
 	<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>

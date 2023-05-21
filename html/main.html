@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/main.css"/>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/s/particles.min.js"></script>
+    <script src="/js/particles.js"></script>
+    <script src="/js/index(particle).js"></script>
+    <title>Home | Page</title>
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <script src="/js/index(particle).js"></script>
+    <script>
+     //for preloader
+   
+     // Show the loader
+   function showLoader() {
+   document.getElementById("loader-container").style.display = "flex";
+   }
+   
+   // Hide the loader and redirect the page
+   function hideLoaderAndRedirect() {
+   document.getElementById("loader-container").style.display = "none";
+   }
+   
+   // Wait for the page to load
+   window.addEventListener("load", function() {
+   // Show the loader
+   showLoader();
+   
+   // Set a delay to simulate the preloader animation
+   setTimeout(function() {
+   // Hide the loader and redirect the page
+   hideLoaderAndRedirect();
+   }, 3000); // Replace 3000 with the duration of your preloader animation in milliseconds
+   });
+   
+   
+   </script>
+</body>
+</html>

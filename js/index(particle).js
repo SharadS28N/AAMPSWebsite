@@ -13,7 +13,7 @@ particlesJS("particles-js", {
         "value": "#ffffff"
       },
       "shape": {
-        "type": "circle",
+        "type": "square",
         "stroke": {
           "width": 0,
           "color": "#000000"
@@ -73,11 +73,11 @@ particlesJS("particles-js", {
       "detect_on": "canvas",
       "events": {
         "onhover": {
-          "enable": true,
+          "enable": false,
           "mode": "grab"
         },
         "onclick": {
-          "enable": true,
+          "enable": false,
           "mode": "push"
         },
         "resize": true

@@ -18,8 +18,7 @@
 	<div class="container">
 		<div class="card">
 			<h2>Login</h2>
-			<a href="#" class="btn facebook"  onclick="loginWithFacebook()"><i class="fab fa-facebook-f"></i> Login with Facebook</a>
-			<a href="#" id="google-signin-button" class="btn google" data-onsuccess="onSignIn"><i class="fab fa-google"></i> Login with Google</a>
+						<a href="#" id="google-signin-button" class="btn google" data-onsuccess="onSignIn"><i class="fab fa-google"></i> Login with Google</a>
             <div class="extra">
                 <p>By logining in you state your representation in our<br><span><a href="/html/privacypolicy.html" style="color: white;">Pricavy Policy</a></span></p>
             </div>
@@ -93,36 +92,7 @@
       
       </script>
 
-      <div>
-      <script>
-        //fb login
-        //data collection
-        window.fbAsyncInit = function() {
-            FB.init({
-              appId      : '946116086813914',
-              cookie     : true,
-              xfbml      : true,
-              version    : 'v16.0'
-            });
-          };
-          
 
-          //execution 
-          function loginWithFacebook() {
-            FB.login(function(response) {
-              if (response.authResponse) {
-                console.log('Welcome!  Fetching your information.... ');
-                FB.api('/me', function(response) {
-                  console.log('Good to see you, ' + response.name + '.');
-                  // Here you can handle the logged in user data as needed.
-                });
-              } else {
-                console.log('User cancelled login or did not fully authorize.');
-              }
-            }, {scope: 'email,user_likes'});
-          }
-            </script>
-        </div>
 
         <script>
           function init() {
@@ -158,8 +128,9 @@
 
                     // Redirect the user to the desired page
     window.location.href = "/main.html";
-
+		  
                 } 
          </script>
+         
 </body>
 </html>

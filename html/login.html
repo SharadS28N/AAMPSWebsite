@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Login</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,100&display=swap">
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,100&display=swap">
     <link rel="stylesheet" href="/css/login.css">
     <script src="https://apis.google.com/js/api.js"></script>
-  </head>
+</head>
 <body>
 <div class="loader-container" id="loader-container">
-        <div class="loader"></div>
-      </div>
+    <div class="loader"></div>
+</div>
 
-	<div id="particles-js"></div>
-	<div class="container">
-		<div class="card">
-			<h2>Login</h2>
-			<a href="#" id="google-signin-button" class="btn google" data-onsuccess="onSignIn"><i class="fab fa-google"></i> Login with Google</a>
-            <div class="extra">
-                <p>By logining in you state your representation in our<br><span><a href="/html/privacypolicy.html" style="color: white;">Pricavy Policy</a></span></p>
-            </div>
+<div id="particles-js"></div>
+<div class="container">
+    <div class="card">
+        <h2>Login</h2>
+        <a href="#" id="google-signin-button" class="btn google" data-onsuccess="onSignIn"><i class="fab fa-google"></i> Login with Google</a>
+        <div class="extra">
+            <p>By logging in, you state your representation in our<br><span><a href="/html/privacypolicy.html" style="color: white;">Privacy Policy</a></span></p>
         </div>
-		</div>
+    </div>
+</div>
 
-    <!-- Include the Google Sign-in API library -->
+<!-- Include the Google Sign-in API library -->
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 <script>
@@ -38,98 +38,55 @@
 
     // Implement a function to handle the user authentication response
     function onSignIn(googleUser) {
+        // Handle the login response here, extract user information, etc.
         var profile = googleUser.getBasicProfile();
         console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
         console.log('Name: ' + profile.getName());
         console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-    }
+        console.log('Email: ' + profile.getEmail());
 
-    // Attach the onSignIn function to the Google Sign-in button
-    var signinButton = document.getElementById('google-signin-button');
-    signinButton.addEventListener('click', function() {
-        gapi.auth2.getAuthInstance().signIn().then(onSignIn);
-    });
-    function onSignIn(googleUser) {
-      // Handle the login response here, extract user information, etc.
-      
-      // Redirect the user to the desired webpage
-      window.location.href = '/html/main.html';
+        // Store the user's login data in localStorage
+        localStorage.setItem('userProfile', JSON.stringify({
+            id: profile.getId(),
+            name: profile.getName(),
+            imageUrl: profile.getImageUrl(),
+            email: profile.getEmail()
+        }));
+
+        // Redirect the user to the desired page
+        window.location.href = "/html/main.html";
     }
 </script>
 
-	<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="/js/index(particle).js"></script>
-    <script src="/js/particles.js"></script>
-    <script src="/js/login.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="/js/index(particle).js"></script>
+<script src="/js/particles.js"></script>
+<script src="/js/login.js"></script>
 
-    <script>
-        //for preloader
-      
+<script>
+    // For preloader
+    // Show the loader
+    function showLoader() {
+        document.getElementById("loader-container").style.display = "flex";
+    }
+
+    // Hide the loader and redirect the page
+    function hideLoaderAndRedirect() {
+        document.getElementById("loader-container").style.display = "none";
+    }
+
+    // Wait for the page to load
+    window.addEventListener("load", function() {
         // Show the loader
-      function showLoader() {
-      document.getElementById("loader-container").style.display = "flex";
-      }
-      
-      // Hide the loader and redirect the page
-      function hideLoaderAndRedirect() {
-      document.getElementById("loader-container").style.display = "none";
-      }
-      
-      // Wait for the page to load
-      window.addEventListener("load", function() {
-      // Show the loader
-      showLoader();
-      
-      // Set a delay to simulate the preloader animation
-      setTimeout(function() {
-      // Hide the loader and redirect the page
-      hideLoaderAndRedirect();
-      }, 3000); // Replace 3000 with the duration of your preloader animation in milliseconds
-      });
-      
-      
-      </script>
+        showLoader();
 
+        // Set a delay to simulate the preloader animation
+        setTimeout(function() {
+            // Hide the loader and redirect the page
+            hideLoaderAndRedirect();
+        }, 3000); // Replace 3000 with the duration of your preloader animation in milliseconds
+    });
+</script>
 
-
-        <script>
-          function init() {
-            gapi.load('auth2', function() {
-              auth2 = gapi.auth2.init({
-                client_id: '959450861298-p3sqsbnkcmoni23jtnp6jp8mpp0ourbi.apps.googleusercontent.com',
-                cookiepolicy: 'single_host_origin'
-              });
-          
-              // Attach click event listener to your custom button
-              document.getElementById('google-signin-button').addEventListener('click', onSignIn);
-            });
-          }
-         </script>
-         <script>
-          function onSignIn() {
-            auth2.signIn().then(function(googleUser) {
-              var id_token = googleUser.getAuthResponse().id_token;
-          
-              // Send the ID token to your server for verification
-              // You can use an AJAX request or any other method to send the token
-          
-              // Access the user's profile information
-              var profile = googleUser.getBasicProfile();
-              console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-              console.log('Name: ' + profile.getName());
-              console.log('Image URL: ' + profile.getImageUrl());
-              console.log('Email: ' + profile.getEmail());
-            }, function(error) {
-                // Add code here to handle sign-in errors
-                console.error(error);
-                });
-
-                    // Redirect the user to the desired page
-    window.location.href = "/html/main.html";
-		  
-                } 
-         </script>
-         
 </body>
 </html>

@@ -21,7 +21,20 @@ function updateUserProfile(user){
     const userName = user.displayName;
     const userProfilePicture = user.photoURL;
     console.log(userEmail);
+
+    document.getElementById("userName").textContent = userName;
+    document.getElementById("userProfilePicture"). src = userProfilePicture;
+
 }
 
-document.getElementById("userName").textContent = userName;
-document.getElementById("userProfilePicture"). src = userProfilePicture;
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        updateUserProfile(user);
+        const uid = user.uid;
+        return uid;
+    } else {
+
+        alert("Create Account & login");
+        windows.location.href = "../html/login.html"
+    }
+})

@@ -17,6 +17,15 @@
     <script src="/s/particles.min.js"></script>
     <script src="/js/particles.js"></script>
     <script src="/js/index(particle).js"></script>
+        <!-- Include Firebase SDK -->
+        <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"></script>
+    
+        <!-- Your Firebase configuration -->
+        <script src="/js/firebase-config.js" defer type="module"></script>
+    
+        <!-- Your script to fetch and display user profile picture -->
+        <script src="/js/update.js" defer type="module"></script>
 
     <title>Home | Page</title>
 </head>
@@ -31,7 +40,8 @@
                 <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Friends</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Messages</a></li>
-                <li class="nav-item"><a href="#" class="nav-link"><img id="profilePic"></a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><img id="profilePic" alt="Profile Picture"></a></li>
+
             </ul>
             <div class="hamburger-menu">&#9776;</div>
         </div>
@@ -39,15 +49,6 @@
 
     <!-- Your content goes here -->
 
-    <!-- Include Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"></script>
-
-    <!-- Your Firebase configuration -->
-    <script src="/js/firebase-config.js"></script>
-
-    <!-- Your script to fetch and display user profile picture -->
-    <script src="/js/update.js"></script>
 
     <script>
      //for preloader

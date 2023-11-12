@@ -43,9 +43,10 @@ const firebaseConfig = {
   });
   });*/
 
-  import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult } from "firebase/auth";
+  import { initializeApp } from "firebase/compat/app";
+  import { getAnalytics } from "firebase/compat/analytics";
+  import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult } from "firebase/compat/auth";
+  
 
 const firebaseConfig = {
   apiKey: "AIzaSyCP9OERGwYkcOr_DI494CbL2vr6VV94ZQk",

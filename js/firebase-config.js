@@ -27,7 +27,7 @@ signInWithPopup(auth, provider)
     const credential = GoogleAuthProvider.credentialFromResult(result);
     const user = result.user;
     console.log(user);
-    window.location.href = "/html/main.html";
+    window.location.href = "../html/main.html";
 
   }).catch((error) => {
     const errorCode = error.code;

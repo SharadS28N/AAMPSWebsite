@@ -20,5 +20,19 @@ const provider = new GoogleAuthProvider();
 const googleLogin = document.getElementById('google-signin-button');
 googleLogin.addEventListener("click", function(){
   console.log("Attempting Google Sign-in");
+
+  const auth = getAuth();
+signInWithPopup(auth, provider)
+  .then((result) => {
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const user = result.user;
+    console.log(user);
+    window.location.href = "/html/main.html";
+
+  }).catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+
 })
 

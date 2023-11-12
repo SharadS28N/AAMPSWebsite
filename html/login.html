@@ -14,8 +14,14 @@
     <script src="/js/firebase-config.js"></script>
     <!-- Include the Google Sign-in API library -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Your Firebase initialization script -->
+    <script>
+        const auth = firebase.auth();
+        const googleProvider = new firebase.auth.GoogleAuthProvider();
+    </script>
 </head>
 <body>
+    <!-- Your existing HTML body -->
     <div class="loader-container" id="loader-container">
         <div class="loader"></div>
     </div>
@@ -39,9 +45,6 @@
                 scope: 'profile email'
             });
         });
-
-        const auth = firebase.auth();
-        const googleProvider = new firebase.auth.GoogleAuthProvider();
 
         function signInWithGoogle() {
             console.log('Attempting Google Sign In');

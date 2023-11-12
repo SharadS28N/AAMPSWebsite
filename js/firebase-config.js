@@ -1,6 +1,5 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCP9OERGwYkcOr_DI494CbL2vr6VV94ZQk",
@@ -14,7 +13,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth();
 auth.languageCode = 'en'
 const provider = new GoogleAuthProvider();

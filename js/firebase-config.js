@@ -19,7 +19,7 @@ const auth = getAuth();
 auth.languageCode = 'en'
 const provider = new GoogleAuthProvider();
 
-const google-login = document.getElementById('google-signin-button');
+const googleLogin = document.getElementById('google-signin-button');
 googleLogin.addEventListener("click", function(){
   console.log("Attempting Google Sign-in");
 })

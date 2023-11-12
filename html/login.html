@@ -15,10 +15,6 @@
     <!-- Include the Google Sign-in API library -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <!-- Your Firebase initialization script -->
-    <script>
-        const auth = firebase.auth();
-        const googleProvider = new firebase.auth.GoogleAuthProvider();
-    </script>
 </head>
 <body>
     <!-- Your existing HTML body -->
@@ -38,29 +34,35 @@
     </div>
 
     <script>
-        // Initialize the Google Sign-in client with your client ID
-       /* gapi.load('auth2', function() {
-            gapi.auth2.init({
-                client_id: '959450861298-p3sqsbnkcmoni23jtnp6jp8mpp0ourbi.apps.googleusercontent.com',
-                scope: 'profile email'
-            });
+       
+    // Initialize the Google Sign-in client with your client ID
+    gapi.load('auth2', function() {
+        gapi.auth2.init({
+            client_id: '959450861298-p3sqsbnkcmoni23jtnp6jp8mpp0ourbi.apps.googleusercontent.com',
+            scope: 'profile email'
         });
+    });
 
-        function signInWithGoogle() {
-            console.log('Attempting Google Sign In');
-            auth.signInWithPopup(googleProvider)
-                .then((result) => {
-                    const user = result.user;
-                    // Handle user data as needed
-                    console.log('User signed in:', user);
-                    
-                    // Redirect the user to the desired page
-                    window.location.href = "/html/main.html";
-                })
-                .catch((error) => {
-                    console.error('Google Sign-In Error:', error);
-                });
-        }*/
+    const auth = firebase.auth();
+    const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+    function signInWithGoogle() {
+        console.log('Attempting Google Sign In');
+        auth.signInWithPopup(googleProvider)
+            .then((result) => {
+                const user = result.user;
+                // Handle user data as needed
+                console.log('User signed in:', user);
+
+                // Redirect the user to the desired page
+                window.location.href = "/html/main.html";
+            })
+            .catch((error) => {
+                console.error('Google Sign-In Error:', error);
+            });
+    }
+</script>
+
     </script>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>

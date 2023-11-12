@@ -46,18 +46,6 @@ body {
     border-color: #2fa8ff;
 }
 
-.facebook {
-    background-color: transparent;
-    border: 2px #00b7ff;
-    border-color: #00b7ff;
-}
-
-.facebook:hover {
-    background-color: #00b7ff;
-    border-color: #2f477a;
-    border-radius: 2px;
-}
-
 .google {
     background-color: transparent;
     border-color: #dd4b39;

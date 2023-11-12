@@ -24,6 +24,22 @@
     <div id="particles-js"></div>
     <script src="/js/index(particle).js"></script>
 
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Your Logo</a>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Friends</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Messages</a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><img id="profilePic"></a></li>
+            </ul>
+            <div class="hamburger-menu">&#9776;</div>
+        </div>
+    </nav>
+
+    <!-- Your content goes here -->
+
+
 
     <script>
      //for preloader
@@ -51,6 +67,17 @@
    });
    
    
+   </script>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navList = document.querySelector('.nav-list');
+
+    hamburgerMenu.addEventListener('click', function () {
+        navList.classList.toggle('show');
+    });
+});
+
    </script>
 </body>
 </html>

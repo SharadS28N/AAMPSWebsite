@@ -4,3 +4,159 @@ body{
     color: #fff;
     font-family: 'Chivo Mono', monospace;
 }
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: transparent; 
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-right: 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #4267B2;
+        width: 100%;
+    }
+
+    .nav-list.show {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 0;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.loader-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	z-index: 9999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.loader {
+	border: 5px solid rgba(255, 87, 34, 0.8);
+	border-top-color: transparent;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	animation: loader-spin 1s linear infinite;
+}
+
+@keyframes loader-spin {
+	to {transform: rotate(360deg);}
+}
+
+.loader:before {
+	content: "";
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	right: -10px;
+	bottom: -10px;
+	border: 5px solid rgba(255, 87, 34, 0.3);
+	border-top-color: transparent;
+	border-radius: 50%;
+	animation: loader-spin 2s linear infinite;
+}
+
+.loader:after {
+	content: "";
+	position: absolute;
+	top: -15px;
+	left: -15px;
+	right: -15px;
+	bottom: -15px;
+	border: 5px solid rgba(255, 87, 34, 0.5);
+	border-top-color: transparent;
+	border-radius: 50%;
+	animation: loader-spin 3s linear infinite;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  #text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }

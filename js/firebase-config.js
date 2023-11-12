@@ -34,5 +34,5 @@ signInWithPopup(auth, provider)
     const errorMessage = error.message;
   });
 
-})
+});
 

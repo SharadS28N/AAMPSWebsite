@@ -1,3 +1,6 @@
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
 const firebaseConfig = {
     apiKey: "AIzaSyCP9OERGwYkcOr_DI494CbL2vr6VV94ZQk",
     authDomain: "logincredentialforwebsite.firebaseapp.com",

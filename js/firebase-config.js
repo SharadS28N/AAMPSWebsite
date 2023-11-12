@@ -1,8 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth , GoogleAuthProvider } from "firebase/auth";
+import { getAuth , GoogleAuthProvider, signInWithRedirect  } from "firebase/auth";
 
-const provider = new GoogleAuthProvider();
 
 const firebaseConfig = {
     apiKey: "AIzaSyCP9OERGwYkcOr_DI494CbL2vr6VV94ZQk",
@@ -17,4 +16,9 @@ const firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-  
+  const provider = new GoogleAuthProvider();
+
+
+  google-signin-button.addEventListener('click', (e) => {
+    signInWithRedirect(auth, provider);
+  });

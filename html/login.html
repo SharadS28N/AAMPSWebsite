@@ -11,39 +11,9 @@
     <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-analytics.js"></script>
-    <script src="/js/firebase-config.js"></script>
+    <script src="/js/firebase-config.js" defer type="module"></script>
     <!-- Include the Google Sign-in API library -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <!-- Your Firebase initialization script -->
-    <script>
-       
-        // Initialize the Google Sign-in client with your client ID
-        gapi.load('auth2', function() {
-              gapi.auth2.init({
-                  client_id: '959450861298-p3sqsbnkcmoni23jtnp6jp8mpp0ourbi.apps.googleusercontent.com',
-                  scope: 'profile email'
-              });
-          });
-      
-          const auth = firebase.auth();
-          const googleProvider = new firebase.auth.GoogleAuthProvider();
-      
-          function signInWithGoogle() {
-              console.log('Attempting Google Sign In');
-              auth.signInWithPopup(googleProvider)
-                  .then((result) => {
-                      const user = result.user;
-                      // Handle user data as needed
-                      console.log('User signed in:', user);
-      
-                      // Redirect the user to the desired page
-                      window.location.href = "/html/main.html";
-                  })
-                  .catch((error) => {
-                      console.error('Google Sign-In Error:', error);
-                  });
-          }
-      </script>
 </head>
 <body>
     <!-- Your existing HTML body -->
@@ -55,7 +25,7 @@
     <div class="container">
         <div class="card">
             <h2>Login</h2>
-            <button id="google-signin-button" class="btn google" onclick="signInWithGoogle()"><i class="fab fa-google"></i> Login with Google</button>
+            <button id="google-signin-button" class="btn google"><i class="fab fa-google"></i> Login with Google</button>
             <div class="extra">
                 <p>By logging in, you state your representation in our<br><span><a href="/html/privacypolicy.html" style="color: white;">Privacy Policy</a></span></p>
             </div>

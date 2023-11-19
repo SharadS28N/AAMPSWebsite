@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | AAMPS</title>
+    <link rel="stylesheet" href="cs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,81 +15,81 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/main.css"/>
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/s/particles.min.js"></script>
     <script src="/js/particles.js"></script>
     <script src="/js/index(particle).js"></script>
-        <!-- Include Firebase SDK -->
-        <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"></script>
-    
-        <!-- Your Firebase configuration -->
-        <script src="/js/firebase-config.js" defer type="module"></script>
-    
-        <!-- Your script to fetch and display user profile picture -->
-        <script src="/js/update.js" defer type="module"></script>
-
-    <title>Home | Page</title>
+    <!-- Include Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"></script>
+    <!-- Your Firebase configuration -->
+    <script src="/js/firebase-config.js" defer type="module"></script>
 </head>
+
 <body>
     <div id="particles-js"></div>
-    <script src="/js/index(particle).js"></script>
 
-    <nav class="navbar">
+    <div class="loader-container" id="loader-container">
+        <div class="loader"></div>
+    </div>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3" style="position:absolute">
+        <a class="navbar-brand" href="#"> AAMPS </a>
         <div class="container">
-            <a href="#" class="logo">Logo</a>
-            <ul class="nav-list">
-                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Friends</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Messages</a></li>
-                <li class="nav-item"><a href="#" class="nav-link"><img id="profilePic" alt="Profile Picture"></a></li>
-
+            <div class="boxcontainer">
+                <table class="elementcontainer">
+                    <tr>
+                        <td>
+                            <input type="text" class="searchbar form-control" placeholder="Search">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <button id="notification" class="btn notification"><i class="fa-regular fa-bell" id="pic"></i></button>
+                </li>
+                <li class="nav-item">
+                    <button id="post" class="btn post"><i class="fa fa-plus" id="pic"></i></button>
+                </li>
             </ul>
-            <div class="hamburger-menu">&#9776;</div>
         </div>
     </nav>
 
-    <!-- Your content goes here -->
+    <!-- Include your loader and other scripts here -->
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-     //for preloader
-   
-     // Show the loader
-   function showLoader() {
-   document.getElementById("loader-container").style.display = "flex";
-   }
-   
-   // Hide the loader and redirect the page
-   function hideLoaderAndRedirect() {
-   document.getElementById("loader-container").style.display = "none";
-   }
-   
-   // Wait for the page to load
-   window.addEventListener("load", function() {
-   // Show the loader
-   showLoader();
-   
-   // Set a delay to simulate the preloader animation
-   setTimeout(function() {
-   // Hide the loader and redirect the page
-   hideLoaderAndRedirect();
-   }, 3000); // Replace 3000 with the duration of your preloader animation in milliseconds
-   });
-   
-   
-   </script>
-   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const navList = document.querySelector('.nav-list');
+        //for preloader
+        // Show the loader
+        function showLoader() {
+            document.getElementById("loader-container").style.display = "flex";
+        }
 
-    hamburgerMenu.addEventListener('click', function () {
-        navList.classList.toggle('show');
-    });
-});
+        // Hide the loader and redirect the page
+        function hideLoaderAndRedirect() {
+            document.getElementById("loader-container").style.display = "none";
+        }
 
-   </script>
+        // Wait for the page to load
+        window.addEventListener("load", function () {
+            // Show the loader
+            showLoader();
+
+            // Set a delay to simulate the preloader animation
+            setTimeout(function () {
+                // Hide the loader and redirect the page
+                hideLoaderAndRedirect();
+            }, 3000); // Replace 3000 with the duration of your preloader animation in milliseconds
+        });
+    </script>
 </body>
+
 </html>

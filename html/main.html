@@ -3,12 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | AAMPS</title>
-    <link rel="stylesheet" href="cs.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@200&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,58 +13,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="/s/particles.min.js"></script>
-    <script src="/js/particles.js"></script>
-    <script src="/js/index(particle).js"></script>
-    <!-- Include Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"></script>
-    <!-- Your Firebase configuration -->
-    <script src="/js/firebase-config.js" defer type="module"></script>
-</head>
-
-<body>
-    <div id="particles-js"></div>
-
-    <div class="loader-container" id="loader-container">
-        <div class="loader"></div>
-    </div>
-
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3" style="position:absolute">
-        <a class="navbar-brand" href="#"> AAMPS </a>
-        <div class="container">
-            <div class="boxcontainer">
-                <table class="elementcontainer">
-                    <tr>
-                        <td>
-                            <input type="text" class="searchbar form-control" placeholder="Search">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <button id="notification" class="btn notification"><i class="fa-regular fa-bell" id="pic"></i></button>
-                </li>
-                <li class="nav-item">
-                    <button id="post" class="btn post"><i class="fa fa-plus" id="pic"></i></button>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Include your loader and other scripts here -->
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Include Particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <title>Home | AAMPS</title>
+</head>
 
+<body>
+    <div class="loader-container" id="loader-container">
+        <div class="loader"></div>
+    </div>
+    <div id="particles-js"></div>
+
+    <div>       
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <a class="navbar-brand" href="#" style="color: whitesmoke;">
+                AAMPS
+            </a>
+            <div class="d-flex justify-content-center align-items-center flex-grow-1">
+                <input class="search-bar" type="text" placeholder="Search">
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <div class="navbar-toggler-icon-bar"></div>
+                    <div class="navbar-toggler-icon-bar"></div>
+                    <div class="navbar-toggler-icon-bar"></div>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-clr rounded-circle mx-2">
+                            <i class="fa-regular clr fa-bell"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-clr rounded-circle mx-2">
+                            <i class="fa-solid clr fa-plus"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-clr rounded-circle mx-2">
+                            <i class="fa-regular clr fa-bell"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Include your loader and other scripts here -->
+    <script src="/js/index(particle).js"></script>
     <script>
-        //for preloader
         // Show the loader
         function showLoader() {
             document.getElementById("loader-container").style.display = "flex";
